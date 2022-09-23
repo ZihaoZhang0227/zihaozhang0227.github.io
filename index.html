@@ -1,0 +1,143 @@
+<!-- This exercise is built off the MDN Video and Audio APIs tutorial written by MDN contributors  -->
+<!-- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Video_and_audio_APIs -->
+<!-- The base files from the example were modified and filled in via the tutorial and some extra commenting by Patrick McMahon -->
+<!-- Orginal Files: https://github.com/mdn/learning-area/blob/main/javascript/apis/video-audio/start/media-player-start.zip -->
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+	<title>Video player example</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/willesPlay.css" />
+	<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/willesPlay.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+	<!-- In the fourth connection I chose to make a music video.This music video brings the audience both visual and auditory enjoyment, the combination of changing background and electronic music looks even more dreamy. On this basis I added four new functions.
+
+    1. The first is a draggable progress bar. I think from the perspective of an audience, and I would very much like to be able to flexibly adjust the picture I want to see or listen to. Secondly, the movement of the progress bar will give me a better understanding of where the video has been played, and I can freely control my own time, which is a great feature.
+
+    2. Second, I added the function of volume adjustment. Volume adjustment is also a must-have element in video. Users can freely control the volume of the video, and even mute it.
+
+    3. Third, I additionally added full screen playback. This feature is more suitable for people to concentrate on watching a video and will provide a very immersive auditory and visual experience. Bring more impact and leave a deeper impression.
+
+    4. Fourth, I added a button with a background color adjustment. This feature is what I came up with when I watched a video one night and found that the background color was too bright to be more immersive. This button is located in the middle of the right border of the video. After clicking, it provides an immersive experience that is no less than full screen. For users, this interaction will be more interesting and will be a bonus point for making an impression. -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div id="willesPlay">
+					<div class="playHeader">
+						<div class="videoName">video</div>
+					</div>
+					<div class="playContent">
+						<div class="turnoff">
+							<ul>
+								<li><a href="javascript:;" title="turnoff"
+										class="btnLight on glyphicon glyphicon-sunglasses"></a></li>
+							</ul>
+						</div>
+						<video width="100%" height="100%" id="playVideo">
+							<source src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4"
+								type="video/mp4">
+							</source>
+						</video>
+						<div class="playTip glyphicon glyphicon-play"></div>
+					</div>
+					<div class="playControll">
+						<div class="playPause playIcon"></div>
+						<div class="timebar">
+							<span class="currentTime">0:00:00</span>
+							<div class="progress">
+								<div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar"
+									aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+							</div>
+							<span class="duration">0:00:00</span>
+						</div>
+						<div class="otherControl">
+							<span class="volume glyphicon glyphicon-volume-down"></span>
+							<span class="fullScreen glyphicon glyphicon-fullscreen"></span>
+							<div class="volumeBar">
+								<div class="volumewrap">
+									<div class="progress">
+										<div class="progress-bar progress-bar-danger" role="progressbar"
+											aria-valuemin="0" aria-valuemax="100" style="width: 8px;height: 40%;"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div style="text-align:center;clear:both;">
+		<script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+		<script src="/follow.js" type="text/javascript"></script>
+	</div>
+</body>
+
+</html>
+<!-- Due to file size I've instead provided links to the various media that you can include for the different contexts -->
+<!-- Just put the links into the src attribute on the media player -->
+
+<!-- Music to relax/study to -->
+<!-- https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/erokia_ambient-wave-56-msfxp7-78.mp3 -->
+<!-- If you use erokia_ambient-wave-56-msfxp7-78.mp3 please include the following on your page -->
+
+<!-- <p class="attribution">
+  "<a target="_blank" rel="noopener noreferrer" href="https://freesound.org/people/Erokia/sounds/516902">Ambient Wave 56 - (MSfxP7 - 78)</a>" by 
+  <a target="_blank" rel="noopener noreferrer" href="https://freesound.org/people/Erokia">Erokia</a> is licensed under 
+  <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/?ref=openverse">CC BY-NC 4.0 
+    <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+    <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+    <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+  </a>. 
+</p>  -->
+
+
+<!-- Cooking/crafting tutorial video -->
+<!-- https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/berry-bunch_handheld-windmill-fan.mp4 -->
+<!-- If you use berry-bunch_handheld-windmill-fan.mp4 please include the following on your page -->
+<!-- <p class="attribution">
+  "<a target="_blank" rel="noopener noreferrer" href="https://vimeo.com/719005078">Art Time, Handheld Windmill / Fan</a>" by 
+  <a target="_blank" rel="noopener noreferrer" href="https://vimeo.com/berrybunchfamily">theBerry Bunch</a> is licensed under 
+  <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/?ref=openverse">CC BY-NC 4.0 
+    <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+    <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+    <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+  </a>. 
+</p>  -->
+
+
+<!-- Music video -->
+<!-- https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4 -->
+<!-- No attribution needed -->
+
+
+<!-- DJ mix -->
+<!-- https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/CHAABI-MAROC-MIX_CHAABI-MIX.mp3 -->
+<!-- If you use CHAABI-MAROC-MIX_CHAABI-MIX.mp3 please include the following on your page -->
+<!--  <p class="attribution">
+  "<a target="_blank" rel="noopener noreferrer" href="https://www.jamendo.com/track/739121">CHAABI MAROC MIX</a>" by 
+  <a target="_blank" rel="noopener noreferrer" href="https://www.jamendo.com/artist/367146/CHAABI_MIX">CHAABI MIX</a> is licensed under 
+  <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/3.0/?ref=openverse">CC BY-NC-SA 3.0 
+    <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+    <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+    <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+    <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+  </a>. 
+</p>  -->
+
+
+<!-- Music album -->
+<!-- https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/p-hase_Hes.mp3 -->
+<!-- https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/p-hase_Dry-Down-feat-Ben-Snaath.mp3 -->
+<!-- https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/p-hase_Leapt.mp3 -->
+<!-- https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/p-hase_Water-Feature.mp3 -->
+<!-- No attribution needed -->
