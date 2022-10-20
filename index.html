@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriftBottle</title>
+    <link rel="stylesheet" href="./css/index.css">
+
+</head>
+<body>
+<!-- I spent a lot of time to complete his, which used the images and code are my own production. Especially the pictures I painted for some time.
+I have roughly completed what I had planned, and when I open it, I see an ocean, and as I said in my presentation, a beach where users can say whatever they want. I added as many details as possible, such as the drifting bottles and sails bobbing on the sea. Adding these details will make the user feel more immersed when opening this "beach".
+I designed three buttons at the bottom, which are my main interaction buttons for the entire beach. -->
+
+
+    <div class="app">
+        
+        <!-- buttles-1 -->
+        <div class="buttles-1 buttles-animate-1"></div>
+        <!-- buttles-2 -->
+        <div class="buttles-2 buttles-animate-2"></div>
+        <!-- buttles-3 -->
+        <div class="buttles-3 buttles-animate-3"></div>
+        <!-- buttles-4 -->
+        <div class="buttles-4 buttles-animate-4"></div>
+        <!-- buttles-5 -->
+        <div class="buttles-5 buttles-animate-5"></div>
+        <!-- buttles-6 -->
+        <div class="buttles-6 buttles-animate-6"></div>
+        <!-- buttles-7 -->
+        <div class="buttles-7 buttles-animate-7"></div>
+
+        <!-- tool -->
+        <div class="tool">
+            
+            <div class="tool-bottle" onclick="openBqbox()"></div>
+
+            <div class="tool-network" id="tool-network" onclick="openNetwork()"></div>
+            
+            <div class="tool-barrel" onclick="openMybottle()"></div>
+
+        </div>
+
+        <!-- bqbox-edit -->
+        <div class="bqbox" id="bqbox">
+            <textarea name="" id="" cols="30" rows="12"></textarea>
+            <button class="btn-throw" onclick="startBqbox()"></button>
+            <button class="btn-cancel" onclick="cancelBqbox()"></button>
+            <img class="selected-1" id="selected-1" onclick="changeSelected1()" data-img="./img/selected2_06.png" src="./img/selected2_06.png" alt="">
+        </div>
+
+        <!-- buttles f animate-->
+        <div class="buttlesf-1" id="buttlesf-1"></div>
+
+        <!-- network-animate -->
+        <div class="network-1" id="network-1"></div>
+        
+        <!-- buttleboxbg -->
+        <div class="buttleboxbg-1" id="buttleboxbg-1"></div>
+
+        <!-- fish-box-1 -->
+        <div class="fish-box-1" id="fish-box-1"></div>
+        <!-- fish-box-2 -->
+        <div class="fish-box-2" id="fish-box-2"></div>
+        <!-- fish-box-3 -->
+        <div class="fish-box-3" id="fish-box-3"></div>
+
+        <!-- bqbox2-edit -->
+        <div class="bqbox2" id="bqbox2">
+            <img id="bqbox2-avatar" src="./img/avatar/avatar1.png" alt="">
+            <textarea id="bqbox2-area" name="" id="" cols="30" rows="12"></textarea>
+            <button class="btn2-reply" onclick="replyBqbox2()"></button>
+            <button class="btn2-throwback" onclick="throwbackBqbox2()"></button>
+            <button class="btn2-cancel" onclick="cancelBqbox2()"></button>
+        </div>
+
+        <!-- mybottle-list -->
+        <div class="mybottle" id="mybottle">
+            <div class="mybottle-list">
+                <div class="mybottle-list-item">
+                    <img src="./img/avatar/avatar1.png" alt="">
+                    <p>Receive a drift bottle from Norway</p>
+                </div>
+                <div class="mybottle-list-item">
+                    <img src="./img/avatar/avatar2.png" alt="">
+                    <p>Receive a drift bottle from UK</p>
+                </div>
+                <div class="mybottle-list-item">
+                    <img src="./img/avatar/avatar3.png" alt="">
+                    <p>Receive a drift bottle from Canada</p>
+                </div>
+                <div class="mybottle-list-item">
+                    <img src="./img/avatar/avatar4.png" alt="">
+                    <p>Receive a drift bottle from China</p>
+                </div>
+                <div class="mybottle-list-item">
+                    <img src="./img/avatar/avatar5.png" alt="">
+                    <p>Receive a drift bottle from Singapore</p>
+                </div>
+                <div class="mybottle-list-item">
+                    <img src="./img/avatar/avatar6.png" alt="">
+                    <p>Receive a drift bottle from South Korea</p>
+                </div>
+                <div class="mybottle-list-item">
+                    <img src="./img/avatar/avatar7.png" alt="">
+                    <p>Receive a drift bottle from UK</p>
+                </div>
+                <div class="mybottle-list-item">
+                    <img src="./img/avatar/avatar8.png" alt="">
+                    <p>Receive a drift bottle from China</p>
+                </div>
+                <div class="mybottle-list-item">
+                    <img src="./img/avatar/avatar9.png" alt="">
+                    <p>Receive a drift bottle from Canada</p>
+                </div>
+                <div class="mybottle-list-item">
+                    <img src="./img/avatar/avatar10.png" alt="">
+                    <p>Receive a drift bottle from Norway</p>
+                </div>
+                
+            </div>
+            <button class="btn3-cancel" onclick="cancelMybottle()"></button>
+        </div>
+        
+        
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+</html>
